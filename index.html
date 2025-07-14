@@ -1,27 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Malla QyF UNAB</title>
-  <link rel="stylesheet" href="estilos.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Malla Interactiva Completa - Química y Farmacia</title>
+<link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-  <h1>Malla Interactiva – Química y Farmacia</h1>
+<h1>Malla Curricular Interactiva - Química y Farmacia</h1>
 
-  <section class="semestre">
-    <h2>I Semestre</h2>
-    <div class="ramo" data-id="qg1" onclick="marcarRamo(this)">Química General I</div>
-    <div class="ramo" data-id="bio-cel" onclick="marcarRamo(this)">Biología Celular</div>
-    <div class="ramo" data-id="calculo" onclick="marcarRamo(this)">Álgebra y Cálculo</div>
+<div id="malla">
+
+  <!-- Primer Año -->
+  <section class="semestre" data-semestre="1">
+    <h2>Primer Año - I Semestre</h2>
+    <ul>
+      <li><label><input type="checkbox" class="materia" data-nombre="Química general I" data-abre="Química general II,Química orgánica I" /> Química general I</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Biología Celular" data-abre="Morfología" /> Biología Celular</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Elementos de Álgebra y Cálculo" data-abre="Física,Fisicoquímica aplicada" /> Elementos de Álgebra y Cálculo</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Formación General I" data-abre="Formación General II" /> Formación General I</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Introducción a las Ciencias Farmacéuticas" /> Introducción a las Ciencias Farmacéuticas</label></li>
+    </ul>
   </section>
 
-  <section class="semestre">
-    <h2>II Semestre</h2>
-    <div class="ramo bloqueado" data-id="qg2" data-prer="qg1" onclick="marcarRamo(this)">Química General II</div>
-    <div class="ramo bloqueado" data-id="morf" data-prer="bio-cel" onclick="marcarRamo(this)">Morfología</div>
-    <div class="ramo bloqueado" data-id="fisica" data-prer="calculo" onclick="marcarRamo(this)">Física</div>
+  <section class="semestre" data-semestre="2">
+    <h2>Primer Año - II Semestre</h2>
+    <ul>
+      <li><label><input type="checkbox" class="materia" data-nombre="Química general II" data-prerrequisitos="Química general I" data-abre="Fisicoquímica aplicada,Química analítica" disabled /> Química general II</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Química orgánica I" data-prerrequisitos="Química general I" data-abre="Química orgánica II" disabled /> Química orgánica I</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Morfología" data-prerrequisitos="Biología Celular" data-abre="Fisiología humana" disabled /> Morfología</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Física" data-prerrequisitos="Elementos de Álgebra y Cálculo" data-abre="Fisicoquímica aplicada" disabled /> Física</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Inglés I" data-abre="Inglés II" /> Inglés I</label></li>
+    </ul>
   </section>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- Segundo Año -->
+  <section class="semestre" data-semestre="3">
+    <h2>Segundo Año - III Semestre</h2>
+    <ul>
+      <li><label><input type="checkbox" class="materia" data-nombre="Fisicoquímica aplicada" data-prerrequisitos="Química general II,Física" data-abre="Farmacocinética y Biofarmacia" disabled /> Fisicoquímica aplicada</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Química orgánica II" data-prerrequisitos="Química orgánica I" data-abre="Bioquímica general,Laboratorio de Bioquímica general,Farmoquímica I" disabled /> Química orgánica II</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Fisiología humana" data-prerrequisitos="Morfología" data-abre="Bioquímica general,Laboratorio de Bioquímica general,Fisiopatología y Semiología" disabled /> Fisiología humana</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Química analítica" data-prerrequisitos="Química general II" data-abre="Química Analítica e Instrumental" disabled /> Química analítica</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Inglés II" data-prerrequisitos="Inglés I" data-abre="Inglés III" disabled /> Inglés II</label></li>
+    </ul>
+  </section>
+
+  <section class="semestre" data-semestre="4">
+    <h2>Segundo Año - IV Semestre</h2>
+    <ul>
+      <li><label><input type="checkbox" class="materia" data-nombre="Bioquímica general" data-prerrequisitos="Química orgánica II,Fisiología humana" data-abre="Microbiología,Laboratorio de Microbiología General" disabled /> Bioquímica general</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Laboratorio de Bioquímica general" data-prerrequisitos="Química orgánica II,Fisiología humana" data-abre="Microbiología,Laboratorio de Microbiología General" disabled /> Laboratorio de Bioquímica general</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Fisiopatología y Semiología" data-prerrequisitos="Fisiología humana" data-abre="Salud Pública I,Farmacología Humana I,Bioquímica Clínica" disabled /> Fisiopatología y Semiología</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Química Analítica e Instrumental" data-prerrequisitos="Química analítica" data-abre="Farmoquímica I,Integrador I: Laboratorio Químico, Clínico, Forense y Biofarmacéutico" disabled /> Química Analítica e Instrumental</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Farmacocinética y Biofarmacia" data-prerrequisitos="Fisicoquímica aplicada" data-abre="Farmacología humana I,Tecnología Farmacéutica I" disabled /> Farmacocinética y Biofarmacia</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Inglés III" data-prerrequisitos="Inglés II" data-abre="Inglés IV" disabled /> Inglés III</label></li>
+    </ul>
+  </section>
+
+  <!-- Tercer Año -->
+  <section class="semestre" data-semestre="5">
+    <h2>Tercer Año - V Semestre</h2>
+    <ul>
+      <li><label><input type="checkbox" class="materia" data-nombre="Microbiología" data-prerrequisitos="Bioquímica general,Laboratorio de Bioquímica general" data-abre="Fundamentos de Biología Molecular y Biotecnología,Tecnología Farmacéutica II" disabled /> Microbiología</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Laboratorio de Microbiología General" data-prerrequisitos="Bioquímica general,Laboratorio de Bioquímica general" data-abre="Fundamentos de Biología Molecular,Tecnología Farmacéutica II" disabled /> Laboratorio de Microbiología General</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Salud Pública I" data-prerrequisitos="Fisiopatología y Semiología" data-abre="Farmacovigilancia y Educación en salud,Salud Pública II" disabled /> Salud Pública I</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Farmoquímica I" data-prerrequisitos="Química orgánica II" data-abre="Botánica y Farmacognosia,Farmoquímica II" disabled /> Farmoquímica I</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Farmacología Humana I" data-prerrequisitos="Fisiopatología y Semiología" data-abre="Farmacología Humana II,Botánica y Farmacognosia" disabled /> Farmacología Humana I</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Inglés IV" data-prerrequisitos="Inglés III" disabled /> Inglés IV</label></li>
+    </ul>
+  </section>
+
+  <section class="semestre" data-semestre="6">
+    <h2>Tercer Año - VI Semestre</h2>
+    <ul>
+      <li><label><input type="checkbox" class="materia" data-nombre="Fundamentos de Biología Molecular y Biotecnología" data-prerrequisitos="Microbiología,Laboratorio de Microbiología General" data-abre="Bioquímica Clínica" disabled /> Fundamentos de Biología Molecular y Biotecnología</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Tecnología Farmacéutica I" data-prerrequisitos="Farmacocinética y Biofarmacia" data-abre="Tecnología Farmacéutica II" disabled /> Tecnología Farmacéutica I</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Farmacología Humana II" data-prerrequisitos="Farmacología Humana I" data-abre="Fármacoquimica II,Fármacovigilancia y Educación en Salud,Farmacología Humana III" disabled /> Farmacología Humana II</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Botánica y Farmacognosia" data-prerrequisitos="Farmoquímica I,Farmacología Humana I" data-abre="Farmacología Humana III" disabled /> Botánica y Farmacognosia</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Fármacoquimica II" data-prerrequisitos="Farmoquímica I" data-abre="Toxicología Clínica y Forense" disabled /> Fármacoquimica II</label></li>
+    </ul>
+  </section>
+
+  <!-- Cuarto Año -->
+  <section class="semestre" data-semestre="7">
+    <h2>Cuarto Año - VII Semestre</h2>
+    <ul>
+      <li><label><input type="checkbox" class="materia" data-nombre="Fármacovigilancia y Educación en Salud" data-prerrequisitos="Farmacología Humana II" data-abre="Salud Pública II,Farmacia Clínica y Atención Farmacéutica I" disabled /> Fármacovigilancia y Educación en Salud</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Tecnología Farmacéutica II" data-prerrequisitos="Tecnología Farmacéutica I" data-abre="Tecnología Cosmética" disabled /> Tecnología Farmacéutica II</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Farmacología Humana III" data-prerrequisitos="Farmacología Humana II,Botánica y Farmacognosia" data-abre="Farmacia Clínica y Atención Farmacéutica I" disabled /> Farmacología Humana III</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Bioquímica Clínica" data-prerrequisitos="Fundamentos de Biología Molecular y Biotecnología" data-abre="Farmacia Clínica y Atención Farmacéutica I,Toxicología Clínica y Forense" disabled /> Bioquímica Clínica</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Formación General II" data-prerrequisitos="Formación General I" data-abre="Formación General III" disabled /> Formación General II</label></li>
+    </ul>
+  </section>
+
+  <section class="semestre" data-semestre="8">
+    <h2>Cuarto Año - VIII Semestre</h2>
+    <ul>
+      <li><label><input type="checkbox" class="materia" data-nombre="Salud Pública II" data-prerrequisitos="Fármacovigilancia y Educación en Salud,Salud Pública I" data-abre="Farmacoeconomía y Marketing,Administración y Gestión en Salud" disabled /> Salud Pública II</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Tecnología Cosmética" data-prerrequisitos="Tecnología Farmacéutica II" data-abre="Gestión y Control de Calidad Farmacéutico y de Alimentos,Integrador I: Laboratorio Químico, Clínico, Forense y Biofarmacéutico" disabled /> Tecnología Cosmética</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Farmacia Clínica y Atención Farmacéutica I" data-prerrequisitos="Farmacología Humana III,Bioquímica Clínica,Fármacovigilancia y Educación en Salud" data-abre="Farmacia Clínica y Atención Farmacéutica II,Administración y Gestión en Salud" disabled /> Farmacia Clínica y Atención Farmacéutica I</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Toxicología Clínica y Forense" data-prerrequisitos="Fármacoquimica II,Bioquímica Clínica" data-abre="Farmacia Clínica y Atención Farmacéutica II,Integrador I: Laboratorio Químico, Clínico, Forense y Biofarmacéutico" disabled /> Toxicología Clínica y Forense</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Formación General III" data-prerrequisitos="Formación General II" data-abre="Formación General IV" disabled /> Formación General III</label></li>
+    </ul>
+  </section>
+
+  <!-- Quinto Año -->
+  <section class="semestre" data-semestre="9">
+    <h2>Quinto Año - IX Semestre</h2>
+    <ul>
+      <li><label><input type="checkbox" class="materia" data-nombre="Farmacoeconomía y Marketing" data-prerrequisitos="Salud Pública II" data-abre="Ética y Legislación Farmacéutica,Gestión de recursos y Evaluación de Proyectos,Práctica en Farmacia Comunitaria" disabled /> Farmacoeconomía y Marketing</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Gestión y Control de Calidad Farmacéutico y de Alimentos" data-prerrequisitos="Tecnología Cosmética" data-abre="Práctica en Farmacia Comunitaria" disabled /> Gestión y Control de Calidad Farmacéutico y de Alimentos</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Farmacia Clínica y Atención Farmacéutica II" data-prerrequisitos="Farmacia Clínica y Atención Farmacéutica I" data-abre="Farmacia Hospitalaria,Integrador II: Atención Clínica,Práctica en Farmacia Comunitaria" disabled /> Farmacia Clínica y Atención Farmacéutica II</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Integrador I: Laboratorio Químico, Clínico, Forense y Biofarmacéutico" data-prerrequisitos="Química Analítica e Instrumental,Toxicología Clínica y Forense,Tecnología Cosmética" data-abre="Práctica en Farmacia Comunitaria" disabled /> Integrador I: Laboratorio Químico, Clínico, Forense y Biofarmacéutico</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Administración y Gestión en Salud" data-prerrequisitos="Salud Pública II,Farmacia Clínica y Atención Farmacéutica I" data-abre="Ética y Legislación Farmacéutica,Farmacia Hospitalaria,Gestión de recursos y Evaluación de Proyectos,Práctica en Farmacia Comunitaria" disabled /> Administración y Gestión en Salud</label></li>
+    </ul>
+  </section>
+
+  <section class="semestre" data-semestre="10">
+    <h2>Quinto Año - X Semestre</h2>
+    <ul>
+      <li><label><input type="checkbox" class="materia" data-nombre="Ética y Legislación Farmacéutica" data-prerrequisitos="Farmacoeconomía y Marketing,Administración y Gestión en Salud" data-abre="Internado Farmacéutico" disabled /> Ética y Legislación Farmacéutica</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Farmacia Hospitalaria" data-prerrequisitos="Farmacia Clínica y Atención Farmacéutica II,Administración y Gestión en Salud" data-abre="Internado Farmacéutico" disabled /> Farmacia Hospitalaria</label></li>
+      <li><label><input type="checkbox" class="materia" data-nombre="Integrador II: Atención Clínica" data-prerrequisitos="Farmacia Clínica y Atención Farmacéutica II" data-abre="Internado Farmacéutico" disabled /> Integrador II: Atención Clínica</label></li>
+      <li><label><
