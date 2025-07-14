@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla QyF UNAB</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h1>Malla Interactiva – Química y Farmacia</h1>
 
+  <section class="semestre">
+    <h2>I Semestre</h2>
+    <div class="ramo" data-id="qg1" onclick="marcarRamo(this)">Química General I</div>
+    <div class="ramo" data-id="bio-cel" onclick="marcarRamo(this)">Biología Celular</div>
+    <div class="ramo" data-id="calculo" onclick="marcarRamo(this)">Álgebra y Cálculo</div>
+  </section>
+
+  <section class="semestre">
+    <h2>II Semestre</h2>
+    <div class="ramo bloqueado" data-id="qg2" data-prer="qg1" onclick="marcarRamo(this)">Química General II</div>
+    <div class="ramo bloqueado" data-id="morf" data-prer="bio-cel" onclick="marcarRamo(this)">Morfología</div>
+    <div class="ramo bloqueado" data-id="fisica" data-prer="calculo" onclick="marcarRamo(this)">Física</div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
